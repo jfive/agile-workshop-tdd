@@ -4,6 +4,7 @@ import static br.com.caelum.tdd.exercicio1.Cargo.DBA;
 import static br.com.caelum.tdd.exercicio1.Cargo.DESENVOLVEDOR;
 import static br.com.caelum.tdd.exercicio1.Cargo.TESTER;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -77,7 +78,25 @@ public class CalculadoraDeSalarioTest {
 		assertEquals(1000.0 * 0.85, salario, 0.000001);
 	}
 	
+	@Test
+	public void deveRetornarImpostoDeVintePorcentoGerente() throws Exception {
+		Funcionario gerente = umFuncionario(Cargo.GERENTE, 5000.0);
 		
+		double salario = calculadora.calcula(gerente);
+		
+		assertEquals(5000.0 * 0.80, salario, 0.000001);
+	}
+	
+	@Test
+	public void deveRetornarImpostoDeQuinzePorcentoGerente() throws Exception {
+		Funcionario gerente = umFuncionario(Cargo.GERENTE, 2000.0);
+		
+		double salario = calculadora.calcula(gerente);
+		
+		assertEquals(2000.0 * 0.85, salario, 0.000001);
+	}
+	
+	
 	private Funcionario umFuncionario(Cargo cargo, double salario) {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome("Martin Fowler");
