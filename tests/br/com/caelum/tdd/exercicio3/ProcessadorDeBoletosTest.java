@@ -1,6 +1,7 @@
 package br.com.caelum.tdd.exercicio3;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,4 +32,5 @@ public class ProcessadorDeBoletosTest {
 		assertEquals(new Pagamento(200.0, MeioDePagamento.BOLETO), f.getPagamentos().get(0));
 		assertEquals(new Pagamento(500.0, MeioDePagamento.BOLETO), f.getPagamentos().get(1));
 	}
+	
 }

@@ -79,7 +79,7 @@ public class CalculadoraDeSalarioTest {
 	}
 	
 	@Test
-	public void deveRetornarImpostoDeVintePorcentoGerente() throws Exception {
+	public void deveRetornar5000MenosImpostoDe20PorcentoSeGerente() throws Exception {
 		Funcionario gerente = umFuncionario(Cargo.GERENTE, 5000.0);
 		
 		double salario = calculadora.calcula(gerente);
@@ -88,7 +88,7 @@ public class CalculadoraDeSalarioTest {
 	}
 	
 	@Test
-	public void deveRetornarImpostoDeQuinzePorcentoGerente() throws Exception {
+	public void deveRetornar2000MenosImpostoDe15PorcentoSeGerente() throws Exception {
 		Funcionario gerente = umFuncionario(Cargo.GERENTE, 2000.0);
 		
 		double salario = calculadora.calcula(gerente);
